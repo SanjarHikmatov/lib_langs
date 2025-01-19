@@ -7,7 +7,7 @@ class BooksLangMiddleware:
 
     def __call__(self, request):
         old_language = request.session.get('language')
-        language = request.POST.get('language', old_language)
+        language = request.GET.get('language', old_language)
         if language not in ["uz", "en","ru"]:
             language = 'uz'
         language_code = {
