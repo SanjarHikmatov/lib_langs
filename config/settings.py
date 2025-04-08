@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -115,25 +116,32 @@ AUTH_PASSWORD_VALIDATORS = [
 from django.utils.translation import gettext_lazy as _
 import os
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'uz'
 
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'translations'),
-]
+# LOCALE_PATHS = [
+#     os.path.join(BASE_DIR, 'translations'),
+# ]
 
 
 USE_I18N = True
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+# USE_L10N = True
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 
-LANGUAGES = (
-    ('uz', _('Uzbek')),
-    ('ru', _('Russian')),
-    ('en', _('English')),
-)
 
 MODELTRANSLATION_LANGUAGE = ('uz', 'ru', 'en')
 TIME_ZONE = 'UTC'
 
+
+LANGUAGES = [
+    ('uz', 'Uzbek'),
+    ('en', 'English'),
+    ('ru', 'Russian'),
+]
+
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 USE_TZ = True
 
